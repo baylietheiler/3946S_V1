@@ -75,6 +75,18 @@ void opcontrol(void);
 /**
  * You can add C++-only headers here
  */
+
+
+#include "subsystemHeaders/drive.hpp"
+#include "subsystemHeaders/intake.hpp"
+#include "subsystemHeaders/globals.hpp"
+#include "subsystemHeaders/auton.hpp"
+#include "subsystemHeaders/flywheel.hpp"
+#include "subsystemHeaders/flywheel_inclination.hpp"
+#include "subsystemHeaders/odom.hpp"
+#include "subsystemHeaders/prog.hpp"
+#include "subsystemHeaders/endgame.hpp"
+
 //#include <iostream>
 #endif
 
