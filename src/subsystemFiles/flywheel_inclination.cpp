@@ -26,3 +26,34 @@ void inclinatetTo(int val, int delay){
     flywheel_inclinator.move_absolute(val,100);
     wait(delay);
 }
+
+
+
+double flywheelHeight;
+double h = 30.25 - flywheelHeight;
+double e = sqrt((dx)*(dx)+(dy)*(dy));
+double d = sqrt((e)*(e) + (h)*(h));
+double a = asin(h/d);
+double ia = imu_sensor.get_pitch();
+double da = a-ia;
+int ie = flywheel_inclinator.get_position();
+//36 motors have 1800 encoder ticks per rotation
+//1800/12 = 150 encoder units per 1/12 of a rotation (1 turn of pinion & ~4 degrees)
+
+void setInclinatorMotorMathyVersion(){
+    flywheel_inclinator.set_zero_position(ie);
+    if(da>0) {
+        double twelfthsNeeded = da/(360/84);
+        int twelfthsN = (int)twelfthsNeeded;
+        int rotations = twelfthsN/12;
+        int encoders = rotations*150;
+        flywheel_inclinator.move_absolute(encoders,100);
+    }
+    if(da<0){
+        double twelfthsNeeded = -da/(360/84);
+        int twelfthsN = (int)twelfthsNeeded;
+        int rotations = twelfthsN/12;
+        int encoders = rotations*150;
+        flywheel_inclinator.move_absolute(-encoders,100);
+    }
+}

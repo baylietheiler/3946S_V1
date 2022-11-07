@@ -18,3 +18,4 @@ pros::Controller controller2(pros::E_CONTROLLER_PARTNER);
 
 pros::Imu gyro(9);
 pros::Rotation driveEncoder(10);
+pros::Imu imu_sensor(11);

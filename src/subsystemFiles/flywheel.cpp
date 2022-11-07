@@ -35,3 +35,39 @@ void setFlywheelMotor2() {
         flywheel2.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
     }
 }
+
+
+double flywheelHeight;
+double h = 30.25 - flywheelHeight;
+double e = sqrt((dx)*(dx)+(dy)*(dy));
+double d = sqrt((e)*(e) + (h)*(h));
+double a = asin(h/d);
+
+/*
+ * e = ((viE + vfE)/2)*t
+ * vfE = 0, viE = ?, t = 1
+ * e = ((viE + 0)/2)*1
+ * e = viE/2
+ * viE = 2e
+ */
+
+double viE = 2 * e;
+
+/*
+ * h = (viH * t) + (1/2 * acceleration * (t * t))
+ * vfH = 0, voH = ?, t = 1, acceleration = -9/8
+ * h = viH - 4.9
+ * viH = h + 4.9
+ */
+
+double viH = h + 4.9;
+
+double vo1 = viE/(cos(a));
+double vo2 = viH/(sin(a));
+
+void setFlywheelMotorsMathyVersion() {
+    if (vo1 == vo2) {
+        setFlywheel1(vo1);
+        setFlywheel2(vo1);
+    }
+}

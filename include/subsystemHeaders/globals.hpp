@@ -22,3 +22,4 @@ extern pros::Controller controller2;
 //gyro and encoder
 extern pros::Imu gyro;
 extern pros::Rotation driveEncoder;
+extern pros::Imu imu_sensor;
