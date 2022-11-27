@@ -36,29 +36,29 @@ void setFlywheelMotor2() {
     }
 }
 
-
+/*
 double flywheelHeight;
 double h = 30.25 - flywheelHeight;
 double e = sqrt((dx)*(dx)+(dy)*(dy));
 double d = sqrt((e)*(e) + (h)*(h));
 double a = asin(h/d);
 
-/*
+
  * e = ((viE + vfE)/2)*t
  * vfE = 0, viE = ?, t = 1
  * e = ((viE + 0)/2)*1
  * e = viE/2
  * viE = 2e
- */
+
 
 double viE = 2 * e;
 
-/*
+
  * h = (viH * t) + (1/2 * acceleration * (t * t))
  * vfH = 0, voH = ?, t = 1, acceleration = -9/8
  * h = viH - 4.9
  * viH = h + 4.9
- */
+
 
 double viH = h + 4.9;
 
@@ -71,3 +71,5 @@ void setFlywheelMotorsMathyVersion() {
         setFlywheel2(vo1);
     }
 }
+
+ */

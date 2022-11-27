@@ -15,5 +15,5 @@ temp.log
 temp.errors
 *.ini
 .d/
-/main.cpp
+/src/main.cpp
 /cmake-build-debug/

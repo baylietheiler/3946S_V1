@@ -27,7 +27,7 @@ void inclinatetTo(int val, int delay){
     wait(delay);
 }
 
-
+/*
 
 double flywheelHeight;
 double h = 30.25 - flywheelHeight;
@@ -57,3 +57,4 @@ void setInclinatorMotorMathyVersion(){
         flywheel_inclinator.move_absolute(-encoders,100);
     }
 }
+ */
