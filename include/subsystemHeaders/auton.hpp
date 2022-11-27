@@ -2,5 +2,7 @@
 
 
 void wait(int msec);
-void blueAWP();
-void redAWP();
+void lblueAWP();
+void rblueAWP();
+void lredAWP();
+void rredAWP();
