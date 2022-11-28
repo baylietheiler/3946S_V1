@@ -93,13 +93,16 @@ void autonomous() {
  */
 void opcontrol() {
     while(true){
-        //drive control
         pros::lcd::print(0, "Encoder Value:%d", int(gyro.get_rotation()));
 
         setDriveMotors();
         setFlywheelMotor1();
         setFlywheelMotor2();
         setIntakeMotor();
+        setIndexerMotor();
+
+        setInclinatorPiston();
+
 
         pros::delay(10);
     }

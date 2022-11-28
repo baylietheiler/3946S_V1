@@ -6,13 +6,13 @@ extern pros::Motor backLeftDrive;
 extern pros::Motor frontRightDrive;
 extern pros::Motor backRightDrive;
 extern pros::Motor intake;
-extern pros::Motor flywheel_inclinator;
+extern pros::Motor flywheel_indexer;
 extern pros::Motor flywheel1;
 extern pros::Motor flywheel2;
 
 
 //pneumatics
-extern pros::ADIDigitalOut piston1;
+extern pros::ADIDigitalOut flywheel_inclinator;
 
 
 //controllers

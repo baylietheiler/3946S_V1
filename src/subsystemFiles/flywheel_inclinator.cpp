@@ -1,5 +1,20 @@
-#include "../../include/subsystemHeaders/flywheel_inclination.hpp"
+#include "../../include/subsystemHeaders/flywheel_inclinator.hpp"
 
+void setInclinator(bool pos){
+    flywheel_inclinator.set_value(pos);
+}
+bool pressedClamp = false;
+
+void setInclinatorPiston(){
+    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)||controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
+        pressedClamp = !pressedClamp;
+        setInclinator(pressedClamp);
+    }
+}
+
+
+
+/*
 void setInclinator(int power){
     flywheel_inclinator.move_voltage(power/127*12000);
 }
@@ -27,7 +42,7 @@ void inclinatetTo(int val, int delay){
     wait(delay);
 }
 
-/*
+
 
 double flywheelHeight;
 double h = 30.25 - flywheelHeight;
