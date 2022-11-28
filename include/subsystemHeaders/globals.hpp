@@ -13,7 +13,7 @@ extern pros::Motor flywheel2;
 
 //pneumatics
 extern pros::ADIDigitalOut flywheel_inclinator;
-
+extern pros::ADIDigitalOut endgame;
 
 //controllers
 extern pros::Controller controller;

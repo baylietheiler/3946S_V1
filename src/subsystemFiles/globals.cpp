@@ -10,7 +10,7 @@ pros::Motor flywheel1(11,pros::E_MOTOR_GEARSET_36,true,pros::E_MOTOR_ENCODER_COU
 pros::Motor flywheel2(12,pros::E_MOTOR_GEARSET_36,true,pros::E_MOTOR_ENCODER_COUNTS);
 
 pros::ADIDigitalOut flywheel_inclinator ('A');
-
+pros::ADIDigitalOut endgame ('B');
 
 
 pros::Controller controller(pros::E_CONTROLLER_MASTER);

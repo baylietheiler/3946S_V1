@@ -6,7 +6,7 @@ void setInclinator(bool pos){
 bool pressedClamp = false;
 
 void setInclinatorPiston(){
-    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)||controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
+    if(controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)||controller2.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_X)) {
         pressedClamp = !pressedClamp;
         setInclinator(pressedClamp);
     }

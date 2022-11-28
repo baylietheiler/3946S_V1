@@ -34,7 +34,7 @@ void initialize() {
     frontRightDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     backRightDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     intake.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
-    flywheel_inclinator.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    flywheel_indexer.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     flywheel1.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
     flywheel2.set_brake_mode(pros::E_MOTOR_BRAKE_BRAKE);
 }
