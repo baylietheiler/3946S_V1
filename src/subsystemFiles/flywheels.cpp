@@ -9,7 +9,7 @@ void setFlywheel2(int power){
 }
 
 void setFlywheelMotor1() {
-    int flywheelPower = 127*(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2)-controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2));
+    int flywheelPower = 75*(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2)-controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2));
     setFlywheel1(flywheelPower);
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2)||controller2.get_digital(pros::E_CONTROLLER_DIGITAL_L2)){
         setFlywheel1(127);
@@ -24,7 +24,7 @@ void setFlywheelMotor1() {
 }
 
 void setFlywheelMotor2() {
-    int flywheelPower = 127*(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)-controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1));
+    int flywheelPower = 75*(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)-controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1));
     setFlywheel2(flywheelPower);
     if(controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1)||controller2.get_digital(pros::E_CONTROLLER_DIGITAL_L1)){
         setFlywheel2(127);

@@ -76,6 +76,7 @@ void competition_initialize() {
 
 
 void autonomous() {
+    lblueAWP();
 
 }
 /**
@@ -93,7 +94,7 @@ void autonomous() {
  */
 void opcontrol() {
     while(true){
-        pros::lcd::print(0, "Encoder Value:%d", int(gyro.get_rotation()));
+        //pros::lcd::print(0, "Encoder Value:%d", int(gyro.get_rotation()));
 
         setDriveMotors();
         setFlywheelMotor1();
