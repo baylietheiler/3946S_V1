@@ -181,7 +181,8 @@ void wait (int msec){
 void lblueAWP(){
 //LEFT SIDE
 //spin first roller
-translate(5, -80);
+translate(15, -80);
+/*
 turn(130, 'l');
 translate(65,127);
 turn(30, 'r');
@@ -192,7 +193,7 @@ turn(130, 'r');
 //start intaking
 translate(30, 127);
 turn(90, 'r');
-//shoot discs
+//shoot discs */
 }
 
 void rblueAWP(){

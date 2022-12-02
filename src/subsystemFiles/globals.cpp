@@ -5,7 +5,7 @@ pros::Motor backLeftDrive(8,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER
 pros::Motor frontRightDrive(9,pros::E_MOTOR_GEARSET_06,true,pros::E_MOTOR_ENCODER_COUNTS);
 pros::Motor backRightDrive(6,pros::E_MOTOR_GEARSET_06,true,pros::E_MOTOR_ENCODER_COUNTS);
 pros::Motor intake(5,pros::E_MOTOR_GEARSET_18,false,pros::E_MOTOR_ENCODER_COUNTS);
-pros::Motor flywheel_indexer(10,pros::E_MOTOR_GEARSET_36,false,pros::E_MOTOR_ENCODER_COUNTS);
+pros::Motor flywheel_indexer(10,pros::E_MOTOR_GEARSET_36,true,pros::E_MOTOR_ENCODER_COUNTS);
 pros::Motor flywheel1(12,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER_COUNTS);
 pros::Motor flywheel2(11,pros::E_MOTOR_GEARSET_06,true,pros::E_MOTOR_ENCODER_COUNTS);
 

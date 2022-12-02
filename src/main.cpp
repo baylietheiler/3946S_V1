@@ -1,9 +1,5 @@
 #include <iostream>
 #include "../include/main.h"
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
-}
 
 void on_center_button() {
     static bool pressed = false;
@@ -27,7 +23,7 @@ void initialize() {
     //  gyro.reset();
     //wait(4000);
     gyro.tare();
-    pros::lcd::set_text(0, "3946A pros 2-4-22");
+    pros::lcd::set_text(0, "3946S");
 
     frontLeftDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     backLeftDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
@@ -59,6 +55,17 @@ void disabled() {
  */
 void competition_initialize() {
     //lift.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+    gyro.tare();
+    pros::lcd::set_text(0, "3946S");
+
+    frontLeftDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    backLeftDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    frontRightDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    backRightDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    intake.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    flywheel_indexer.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    flywheel1.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
+    flywheel2.set_brake_mode(pros::E_MOTOR_BRAKE_BRAKE);
 
 }
 
