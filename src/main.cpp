@@ -1,15 +1,6 @@
 #include <iostream>
 #include "../include/main.h"
 
-void on_center_button() {
-    static bool pressed = false;
-    pressed = !pressed;
-    if (pressed) {
-        pros::lcd::set_text(2, "I was pressed!");
-    } else {
-        pros::lcd::clear_line(2);
-    }
-}
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -83,7 +74,29 @@ void competition_initialize() {
 
 
 void autonomous() {
-    lblueAWP();
+
+ /*  FIRST TOURNAMENT CODE (ONE ROLLER) - 12/7/22
+frontRightDrive.set_zero_position(0.0);
+backRightDrive.set_zero_position(0.0);
+frontLeftDrive.set_zero_position(0.0);
+backLeftDrive.set_zero_position(0.0);
+intake.set_zero_position(0.0);
+flywheel_indexer.set_zero_position(0.0);
+flywheel1.set_zero_position(0.0);
+flywheel2.set_zero_position(0.0);
+
+frontRightDrive.move_relative(200,100);
+backRightDrive.move_relative(200,100);
+frontLeftDrive.move_relative(200,100);
+backLeftDrive.move_relative(200,100);
+wait(700);
+intake.move_relative(1000, 140);
+wait(500);
+frontRightDrive.move_relative(-1000,100);
+backRightDrive.move_relative(-1000,100);
+frontLeftDrive.move_relative(-1000,100);
+backLeftDrive.move_relative(-1000,100);
+*/
 
 }
 /**

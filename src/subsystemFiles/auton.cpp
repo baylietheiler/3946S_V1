@@ -1,5 +1,8 @@
 #include "../../include/subsystemHeaders/auton.hpp"
 
+
+
+
 //auton functions
 void translate(float units, int voltage){
 
@@ -114,7 +117,7 @@ void turn(float degrees, char direction){
         else {
 
             turnError =   (degrees) +gyro.get_rotation();
-            setLeftDrive( -(turnError * kP - kD * deriv / 10));
+            setLeftDrive( (turnError * kP - kD * deriv / 10));
             setRightDrive( (turnError * kP - kD *deriv / 10));
             wait(10);
             turnErrorF =  (degrees) +gyro.get_rotation();
@@ -156,7 +159,7 @@ void turn(float degrees, char direction, int kick){
         else {
 
             turnError =   (degrees) +gyro.get_rotation();
-            setLeftDrive( -(turnError * kP - kD * deriv / 10));
+            setLeftDrive( (turnError * kP - kD * deriv / 10));
             setRightDrive( (turnError * kP - kD *deriv / 10));
             wait(10);
             turnErrorF =  (degrees) +gyro.get_rotation();
@@ -182,8 +185,7 @@ void lblueAWP(){
 //LEFT SIDE
 //spin first roller
 translate(15, -80);
-/*
-turn(130, 'l');
+/*turn(130, 'l');
 translate(65,127);
 turn(30, 'r');
 translate(10, 100);
@@ -195,6 +197,7 @@ translate(30, 127);
 turn(90, 'r');
 //shoot discs */
 }
+
 
 void rblueAWP(){
 
