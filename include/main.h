@@ -66,7 +66,7 @@ void autonomous(void);
 void initialize(void);
 void disabled(void);
 void competition_initialize(void);
-void opcontrol(void);
+[[noreturn]] void opcontrol(void);
 #ifdef __cplusplus
 }
 #endif
@@ -82,11 +82,10 @@ void opcontrol(void);
 #include "subsystemHeaders/globals.hpp"
 #include "subsystemHeaders/auton.hpp"
 #include "subsystemHeaders/flywheels.hpp"
-#include "subsystemHeaders/flywheel_inclinator.hpp"
 #include "subsystemHeaders/flywheel_indexer.hpp"
 #include "subsystemHeaders/odom.hpp"
 #include "subsystemHeaders/prog.hpp"
-#include "subsystemHeaders/endgame.hpp"
+#include "subsystemHeaders/endgame_expansion.hpp"
 
 //#include <iostream>
 #endif

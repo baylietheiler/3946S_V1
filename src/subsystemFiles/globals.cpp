@@ -1,16 +1,24 @@
 #include "../../include/subsystemHeaders/globals.hpp"
-
-pros::Motor frontLeftDrive(7,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER_COUNTS);
-pros::Motor backLeftDrive(18,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER_COUNTS);
-pros::Motor frontRightDrive(9,pros::E_MOTOR_GEARSET_06,true,pros::E_MOTOR_ENCODER_COUNTS);
+//coral
+pros::Motor frontLeftDrive(6,pros::E_MOTOR_GEARSET_06,true,pros::E_MOTOR_ENCODER_COUNTS);
+//green
+pros::Motor backLeftDrive(19,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER_COUNTS);
+//yellow
+pros::Motor frontRightDrive(10,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER_COUNTS);
+//purple
 pros::Motor backRightDrive(21,pros::E_MOTOR_GEARSET_06,true,pros::E_MOTOR_ENCODER_COUNTS);
-pros::Motor intake(1,pros::E_MOTOR_GEARSET_18,false,pros::E_MOTOR_ENCODER_COUNTS);
-pros::Motor flywheel_indexer(10,pros::E_MOTOR_GEARSET_36,true,pros::E_MOTOR_ENCODER_COUNTS);
-pros::Motor flywheel1(14,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER_COUNTS);
-pros::Motor flywheel2(13,pros::E_MOTOR_GEARSET_06,true,pros::E_MOTOR_ENCODER_COUNTS);
+//cornflower
+pros::Motor intake1(14,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER_COUNTS);
+//blue
+pros::Motor intake2(13,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER_COUNTS);
+//light pink
+pros::Motor flywheel1(7,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER_COUNTS);
+//hot pink
+pros::Motor flywheel2(1,pros::E_MOTOR_GEARSET_06,false,pros::E_MOTOR_ENCODER_COUNTS);
 
-pros::ADIDigitalOut flywheel_inclinator ('A');
-pros::ADIDigitalOut endgame ('B');
+pros::ADIDigitalOut flywheel_indexer ('A');
+pros::ADIDigitalOut endgame1 ('B');
+pros::ADIDigitalOut endgame2 ('C');
 
 
 pros::Controller controller(pros::E_CONTROLLER_MASTER);

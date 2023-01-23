@@ -14,14 +14,14 @@ void initialize() {
     //  gyro.reset();
     //wait(4000);
     gyro.tare();
-    pros::lcd::set_text(0, "3946S");
+    //pros::lcd::set_text(0, "3946S");
 
     frontLeftDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     backLeftDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     frontRightDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     backRightDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
-    intake.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
-    flywheel_indexer.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    intake1.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    intake2.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     flywheel1.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
     flywheel2.set_brake_mode(pros::E_MOTOR_BRAKE_BRAKE);
 }
@@ -53,8 +53,8 @@ void competition_initialize() {
     backLeftDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     frontRightDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     backRightDrive.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
-    intake.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
-    flywheel_indexer.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    intake1.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
+    intake2.set_brake_mode(pros::E_MOTOR_BRAKE_COAST);
     flywheel1.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
     flywheel2.set_brake_mode(pros::E_MOTOR_BRAKE_BRAKE);
 
@@ -75,28 +75,55 @@ void competition_initialize() {
 
 void autonomous() {
 
- /*  FIRST TOURNAMENT CODE (ONE ROLLER) - 12/7/22
+  //FIRST TOURNAMENT CODE (ONE ROLLER) - 12/7/22
 frontRightDrive.set_zero_position(0.0);
 backRightDrive.set_zero_position(0.0);
 frontLeftDrive.set_zero_position(0.0);
 backLeftDrive.set_zero_position(0.0);
-intake.set_zero_position(0.0);
-flywheel_indexer.set_zero_position(0.0);
+intake1.set_zero_position(0.0);
+intake2.set_zero_position(0.0);
 flywheel1.set_zero_position(0.0);
 flywheel2.set_zero_position(0.0);
 
-frontRightDrive.move_relative(200,100);
-backRightDrive.move_relative(200,100);
-frontLeftDrive.move_relative(200,100);
-backLeftDrive.move_relative(200,100);
-wait(700);
-intake.move_relative(1000, 140);
-wait(500);
-frontRightDrive.move_relative(-1000,100);
-backRightDrive.move_relative(-1000,100);
-frontLeftDrive.move_relative(-1000,100);
-backLeftDrive.move_relative(-1000,100);
-*/
+intake1.move_relative(500, 140);
+intake2.move_relative(500, 140);
+frontRightDrive.move_relative(40,100);
+backRightDrive.move_relative(40,100);
+frontLeftDrive.move_relative(40,100);
+backLeftDrive.move_relative(40,100);
+wait(300);
+//intake1.move_relative(1000, 140);
+//intake2.move_relative(1000, 140);
+/*
+frontRightDrive.move_relative(-1800,100);
+backRightDrive.move_relative(-1800,100);
+frontLeftDrive.move_relative(-1800,100);
+backLeftDrive.move_relative(-1800,100);
+wait(1500);
+
+frontRightDrive.move_relative(1000,140);
+backRightDrive.move_relative(1000,140);
+frontLeftDrive.move_relative(-1000,140);
+backLeftDrive.move_relative(-1000,140);
+
+endgame1.set_value(false);
+endgame2.set_value(false);
+
+frontRightDrive.move_relative(500,140);
+backRightDrive.move_relative(500,140);
+frontLeftDrive.move_relative(-500,140);
+backLeftDrive.move_relative(-500,140);
+wait(1800);
+
+frontRightDrive.move_relative(1800,140);
+backRightDrive.move_relative(1800,140);
+frontLeftDrive.move_relative(1800,140);
+backLeftDrive.move_relative(1800,140);
+
+wait(2400);
+intake1.move_relative(500, 180);
+intake2.move_relative(500, 180); */
+
 
 }
 /**
@@ -114,15 +141,13 @@ backLeftDrive.move_relative(-1000,100);
  */
 void opcontrol() {
     while(true){
-        //pros::lcd::print(0, "Encoder Value:%d", int(gyro.get_rotation()));
-
         setDriveMotors();
-        setFlywheelMotor1();
-        setFlywheelMotor2();
-        setIntakeMotor();
-        setIndexerMotor();
+        setIntakeMotors();
+        //setFlywheelMotors();
+        setIndexerPiston();
+        setEndgamePistons();
+        setFlywheels(127);
 
-        setInclinatorPiston();
 
 
         pros::delay(10);
